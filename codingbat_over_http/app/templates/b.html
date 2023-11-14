@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+
+{% if number %}
+  
+    <h1>{{number}}</h1>
+
+{% else %}
+  
+    <form>
+        {{form.as_p}}
+        <button>Submit</button>
+    </form>
+
+{% endif %}
+
+{% endblock content %}

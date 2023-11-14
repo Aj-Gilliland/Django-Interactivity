@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+
+{% if age %}
+    {% comment %} #else display "Hey, {{name}}!" {% endcomment %}
+    <h1>{{age}}</h1>
+
+{% else %}
+    {% comment %} #if nothing being returned ask for name {% endcomment %}
+    <form>
+        {{form.as_p}}
+        <button>Submit</button>
+    </form>
+{% endif %}
+
+{% endblock content %}
