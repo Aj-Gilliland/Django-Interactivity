@@ -11,8 +11,8 @@ class TestWarmUp(SimpleTestCase):
         self.assertContains(response, "ChoChoCho")
 
     def test_abc(self):
-        response = self.client.get("/warmup-2/font-times/?word=Chocolate&positive_number=2")
-        self.assertContains(response, "ChoCho")
+        response = self.client.get("/warmup-2/font-times/?word=Abc&positive_number=3")
+        self.assertContains(response, "AbcAbcAbc")
 
 class TestLogic(SimpleTestCase):
     def test_1_2_3(self):
@@ -24,8 +24,8 @@ class TestLogic(SimpleTestCase):
         self.assertContains(response, 3)
 
     def test_3_2_1(self):
-        response = self.client.get("/logic-2/no-teen-sum/?num1=1&num2=2&num3=3")
-        self.assertContains(response, 6)
+        response = self.client.get("/logic-2/no-teen-sum/?num1=2&num2=1&num3=14")
+        self.assertContains(response, 3)
     
 class TestString(SimpleTestCase):
     def test_abcxyz(self):
@@ -37,7 +37,7 @@ class TestString(SimpleTestCase):
         self.assertContains(response, False)
 
     def test_xyz(self):
-        response = self.client.get("/string-2/xyz-there/?stringThing=xyz")
+        response = self.client.get("/string-2/xyz-there/?stringThing=xyz.abc")
         self.assertContains(response, True)
 
 class TestLists(SimpleTestCase):
